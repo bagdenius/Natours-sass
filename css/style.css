@@ -51,11 +51,13 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 60px;
 
   backface-visibility: hidden;
 }
@@ -66,9 +68,7 @@ body {
   font-weight: 400;
   letter-spacing: 45px;
 
-  animation-name: moveToRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+  animation: moveRight 1s ease-out;
 }
 
 .heading-primary-sub {
@@ -77,12 +77,10 @@ body {
   font-weight: 700;
   letter-spacing: 17.4px;
 
-  animation-name: moveToLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+  animation: moveLeft 1s ease-out;
 }
 
-@keyframes moveToRight {
+@keyframes moveRight {
   0% {
     opacity: 0;
     transform: translateX(-100px);
@@ -96,7 +94,7 @@ body {
   }
 }
 
-@keyframes moveToLeft {
+@keyframes moveLeft {
   0% {
     opacity: 0;
     transform: translateX(100px);
@@ -108,4 +106,68 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveUp 0.5s ease-out 0.5s;
+  animation-fill-mode: backwards;
 }
