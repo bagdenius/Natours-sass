@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .btn {
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -11,6 +12,10 @@
     border-radius: 10rem;
     transition: all 0.1s;
     font-size: $default-font-size;
+
+    // Change for thr <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -23,7 +28,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
