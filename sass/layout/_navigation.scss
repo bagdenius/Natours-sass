@@ -103,7 +103,19 @@
   }
 
   &__checkbox:checked ~ &__background {
-    transform: scale(75);
+    transform: scale(70);
+
+    @include respond(large-desktop) {
+      transform: scale(120);
+    }
+
+    @include respond(tablet-landscape) {
+      transform: scale(80);
+    }
+
+    @include respond(mobile) {
+      transform: scale(60);
+    }
   }
 
   &__checkbox:checked ~ &__nav {
