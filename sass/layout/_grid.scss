@@ -7,6 +7,10 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tablet-portrait) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   [class^='col-'] {
@@ -14,6 +18,15 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tablet-portrait) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tablet-portrait) {
+      width: 100% !important;
     }
   }
 
@@ -45,5 +58,13 @@
     width: calc(
       3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
     );
+  }
+
+  @include respond(tablet-portrait) {
+    max-width: 50rem;
+  }
+
+  @include respond(mobile) {
+    max-width: 40rem;
   }
 }

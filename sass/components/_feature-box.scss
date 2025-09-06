@@ -20,9 +20,17 @@
     );
     background-clip: text;
     color: transparent;
+
+    @include respond(tablet-portrait) {
+      margin-bottom: 0;
+    }
   }
 
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
+  }
+
+  @include respond(tablet-portrait) {
+    padding: 2rem;
   }
 }

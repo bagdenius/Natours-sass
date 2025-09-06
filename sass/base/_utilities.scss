@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .u-center-text {
   text-align: center !important;
 }
@@ -8,15 +10,40 @@
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important;
+
+  @include respond(tablet-portrait) {
+    margin-bottom: 3rem !important;
+  }
+
+  @include respond(mobile) {
+    margin-bottom: 2rem !important;
+  }
 }
 
 .u-margin-bottom-large {
   margin-bottom: 8rem !important;
+
+  @include respond(tablet-portrait) {
+    margin-bottom: 4rem !important;
+  }
+
+  @include respond(mobile) {
+    margin-bottom: 3rem !important;
+  }
 }
 
 .u-margin-top-large {
   margin-top: 8rem !important;
 }
+
 .u-margin-top-huge {
   margin-top: 10rem !important;
+
+  @include respond(tablet-portrait) {
+    margin-top: 8rem !important;
+  }
+
+  @include respond(mobile) {
+    margin-top: 6rem !important;
+  }
 }

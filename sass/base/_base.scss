@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 *,
 ::before,
 ::after {
@@ -8,8 +10,29 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(large-desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(tablet-landscape) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tablet-portrait) {
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tablet-landscape) {
+    padding: 1.5rem;
+  }
+
+  @include respond(tablet-portrait) {
+    padding: 0;
+  }
 }

@@ -30,4 +30,16 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+  @include respond(tablet-landscape) {
+    clip-path: polygon(0 0, 100% 0, 100% 80dvh, 0 100%);
+  }
+
+  @include respond(tablet-portrait) {
+    clip-path: polygon(0 0, 100% 0, 100% 85dvh, 0 100%);
+  }
+
+  @include respond(mobile) {
+    clip-path: polygon(0 0, 100% 0, 100% 90dvh, 0 100%);
+  }
 }
