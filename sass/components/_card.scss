@@ -10,7 +10,6 @@
   &__side {
     height: 51rem;
     width: 100%;
-
     font-size: 2rem;
     transition: all 0.8s ease;
     position: absolute;
@@ -243,7 +242,7 @@
       padding: 0;
     }
 
-    // Back side styling
+    // Back side is now on front bottom
     &__cta {
       position: relative;
       top: 0%;
